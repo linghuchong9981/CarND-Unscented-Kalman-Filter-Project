@@ -6,6 +6,7 @@
 #include <vector>
 #include <string>
 #include <fstream>
+#include "tools.h"
 
 using Eigen::MatrixXd;
 using Eigen::VectorXd;
@@ -66,6 +67,9 @@ public:
 
   ///* Sigma point spreading parameter
   double lambda_;
+    
+  Tools tools_;
+    
 
 
   /**
@@ -83,6 +87,12 @@ public:
    * @param meas_package The latest measurement data of either radar or laser
    */
   void ProcessMeasurement(MeasurementPackage meas_package);
+    
+
+    /**
+     * Init State vector
+     */
+    void InitState(MeasurementPackage meas_package);
 
   /**
    * Prediction Predicts sigma points, the state, and the state covariance
