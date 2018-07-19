@@ -68,6 +68,10 @@ public:
     ///* Sigma point spreading parameter
     double lambda_;
 
+    float nis_line_value;
+    int below_nis_line_count;
+    int upper_nis_line_count;
+
     Tools tools_;
 
 
